@@ -4,7 +4,11 @@
 }
 
 .availablemoney {
-    font: white;
+    font: white bold;
+}
+
+.navbalance {
+    
 }
 
 .negative {
@@ -12,5 +16,5 @@
 }
 
 .positive {
-    color: green
+    color: lightgreen;
 }
