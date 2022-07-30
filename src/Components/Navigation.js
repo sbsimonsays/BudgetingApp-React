@@ -35,7 +35,7 @@ function Navigation() {
         </Link>
 
         <h3 className="availablemoney">
-            AMOUNT AVAILABLE:</h3> 
+            AMOUNT AVAILABLE:</h3>
         <h2 className="navbalance">
           { totalAmount > 0 
           ? <span className="positively">${totalAmount.toFixed(2)}</span>
