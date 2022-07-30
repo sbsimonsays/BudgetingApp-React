@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
-import index from 'react-router-dom';
 
 const API = process.env.REACT_APP_API_URL;
 
