@@ -8,7 +8,7 @@
 }
 
 .navbalance {
-    
+    color: lightgreen
 }
 
 .negative {
@@ -16,5 +16,5 @@
 }
 
 .positive {
-    color: lightgreen;
+    color: green;
 }
