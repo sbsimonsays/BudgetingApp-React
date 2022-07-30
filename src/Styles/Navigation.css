@@ -3,8 +3,8 @@
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-.availablemoney {
-    font: white bold;
+h3.availablemoney {
+    font: bold snow;
 }
 
 .navbalance {
