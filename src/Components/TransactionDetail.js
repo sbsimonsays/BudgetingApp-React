@@ -2,6 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
+import Button from "react-bootstrap/Button";
 
 const API = process.env.REACT_APP_API_URL;
 
@@ -29,14 +30,13 @@ function TransactionDetail() {
 
   return (
     <div className="Detail">
-      <h1>Transaction Show Page</h1>
       <span>
         {" "}
-        <h2>Date: {transaction.date}</h2>
+        <h2>Date of Transaction: {transaction.date}</h2>
       </span>
       <span>
         {" "}
-        <h2>Name: {transaction.item_name}</h2>
+        <h2>Transaction: {transaction.item_name}</h2>
       </span>
       <span>
         {" "}
@@ -51,13 +51,15 @@ function TransactionDetail() {
         <h2> Amount: ${transaction.amount}</h2>
       </span>
       <Link to={`/transactions`}>
-        <button>Back</button>
+        <Button variant="secondary">Back</Button>
       </Link>
       <Link to={`/transactions/${index}/edit`}>
-        <button>Edit</button>
+        <Button variant="warning">Edit</Button>
       </Link>
       <Link to={`/transactions`}>
-        <button onClick={handleDelete}>Delete</button>
+        <Button variant="danger" onClick={handleDelete}>
+          Delete
+        </Button>
       </Link>
     </div>
   );

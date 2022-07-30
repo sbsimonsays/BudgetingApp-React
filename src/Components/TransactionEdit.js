@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import Button from 'react-bootstrap/Button';
+import Button from "react-bootstrap/Button";
 
 const API = process.env.REACT_APP_API_URL;
 
@@ -25,7 +25,8 @@ function TransactionEdit() {
 
   const handleNumberChange = (event) => {
     setTransaction({
-      ...transaction, [event.target.id]: Number(event.target.value),
+      ...transaction,
+      [event.target.id]: Number(event.target.value),
     });
   };
 
@@ -65,6 +66,7 @@ function TransactionEdit() {
           placeholder="Date"
           required
         />
+        <br></br>
         <label htmlFor="item_name">Name:</label>
         <input
           name="item_name"
@@ -75,6 +77,7 @@ function TransactionEdit() {
           placeholder="Name"
           required
         />
+        <br></br>
         <label htmlFor="from">From:</label>
         <input
           id="from"
@@ -82,7 +85,9 @@ function TransactionEdit() {
           value={transaction.from}
           placeholder="From"
           onChange={handleTextChange}
+          required
         />
+        <br></br>
         <label htmlFor="amount">Amount:</label>
         <input
           name="amount"
@@ -93,6 +98,7 @@ function TransactionEdit() {
           placeholder="Amount"
           required
         />
+        <br></br>
         <label htmlFor="category">Category:</label>
         <input
           name="category"
@@ -103,11 +109,13 @@ function TransactionEdit() {
           placeholder="Category"
           required
         />
-
-        <input type="submit" />
+        <br></br>
+        <Button variant="success" type="submit">
+          SUBMIT
+        </Button>
       </form>
       <Link to={`/transactions/${index}`}>
-        <Button variant="info">Back</Button>
+        <Button variant="secondary">NEVERMIND</Button>
       </Link>
     </div>
   );

@@ -21,24 +21,16 @@ function Transactions() {
       });
   }, []);
 
-  let totalAmount = transactions
-    .map((transactions) => transactions.amount)
-    .reduce((a, b) => Number(a) + Number(b), 0);
-
   return (
     <div className="container">
-      <h1>
-        Amount Available:<span> ${totalAmount.toFixed(2)}</span>{" "}
-      </h1>
 
       <section className="transactionlog">
-        <Table>
+        <Table hover striped>
           <thead>
             <tr>
               <th>Date</th>
+              <th>To/From</th>
               <th>Item/Transaction</th>
-              <th>Category</th>
-              <th>From</th>
               <th>Amount</th>
             </tr>
           </thead>
@@ -47,8 +39,8 @@ function Transactions() {
               return (
                 <Transaction
                   key={index}
-                  transaction={transaction}
                   index={index}
+                  transaction={transaction}
                 />
               );
             })}

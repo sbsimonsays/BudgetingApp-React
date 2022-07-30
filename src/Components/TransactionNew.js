@@ -1,18 +1,19 @@
-import React from 'react';
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import React from "react";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import Button from "react-bootstrap/Button";
 
 const API = process.env.REACT_APP_API_URL;
 
 function TransactionNew() {
   const nav = useNavigate();
   const [transaction, setTransaction] = useState({
-    date: '',
-    item_name: '',
-    from: '',
+    date: "",
+    item_name: "",
+    from: "",
     amount: 0,
-    category: '',
+    category: "",
   });
 
   const addTransaction = () => {
@@ -27,7 +28,10 @@ function TransactionNew() {
   };
 
   const handleNumberChange = (event) => {
-    setTransaction({ ...transaction, [event.target.id]: Number(event.target.value)});
+    setTransaction({
+      ...transaction,
+      [event.target.id]: Number(event.target.value),
+    });
   };
 
   const handleSubmit = (event) => {
@@ -37,7 +41,7 @@ function TransactionNew() {
 
   return (
     <div className="New">
-      <h1>New Transaction</h1>
+      <h1>Post New Transaction</h1>
       <form onSubmit={handleSubmit}>
         <label htmlFor="date">Date:</label>
         <input
@@ -47,14 +51,7 @@ function TransactionNew() {
           placeholder="Date"
           onChange={handleTextChange}
         />
-        <label htmlFor="item_name">Name:</label>
-        <input
-          id="item_name"
-          type="text"
-          value={transaction.item_name}
-          placeholder="Name"
-          onChange={handleTextChange}
-        />
+        <br></br>
         <label htmlFor="from">From:</label>
         <input
           id="from"
@@ -63,6 +60,16 @@ function TransactionNew() {
           placeholder="From"
           onChange={handleTextChange}
         />
+        <br></br>
+        <label htmlFor="item_name">Transaction Name:</label>
+        <input
+          id="item_name"
+          type="text"
+          value={transaction.item_name}
+          placeholder="Name"
+          onChange={handleTextChange}
+        />
+        <br></br>
         <label htmlFor="category">Category:</label>
         <input
           id="category"
@@ -71,6 +78,7 @@ function TransactionNew() {
           placeholder="Category"
           onChange={handleTextChange}
         />
+        <br></br>
         <label htmlFor="amount">Amount:</label>
         <input
           name="amount"
@@ -80,7 +88,10 @@ function TransactionNew() {
           placeholder="Amount"
           onChange={handleNumberChange}
         />
-        <input type="submit" />
+        <br></br>
+        <Button variant="success" type="submit">
+          Submit
+        </Button>
       </form>
     </div>
   );
