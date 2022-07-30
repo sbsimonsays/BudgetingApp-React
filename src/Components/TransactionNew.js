@@ -93,6 +93,9 @@ function TransactionNew() {
           Submit
         </Button>
       </form>
+      <Link to={`/transactions/${index}`}>
+        <Button variant="secondary">BACK</Button>
+      </Link>
     </div>
   );
 }

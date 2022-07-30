@@ -115,7 +115,7 @@ function TransactionEdit() {
         </Button>
       </form>
       <Link to={`/transactions/${index}`}>
-        <Button variant="secondary">NEVERMIND</Button>
+        <Button variant="secondary">BACK</Button>
       </Link>
     </div>
   );
