@@ -94,10 +94,13 @@ function TransactionNew() {
           Submit
         </Button>
       </form>
+      <form>
       <Link to={`/transactions`}>
-        <Button variant="secondary">BACK</Button>
+        <Button variant="secondary">Back</Button>
       </Link>
+      </form>
     </div>
   );
 }
+
 export default TransactionNew;
