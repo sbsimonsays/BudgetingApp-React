@@ -34,7 +34,7 @@ function Navigation() {
           <Button variant="outline-light">Bank of 'Murrica</Button>
         </Link>
 
-        <h3 className="availablemoney">
+        <h3 className="amounthere">
             AMOUNT AVAILABLE:</h3>
         <h2 className="navbalance">
           { totalAmount > 0 
